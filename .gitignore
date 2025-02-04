@@ -1,2 +1,7 @@
-*.exe
 .vscode/
+.exe
+Graph/*.exe
+Recursion/*.exe
+Linked List/*.exe
+Trees/*.exe
+Trie/*.exe
