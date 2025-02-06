@@ -1,5 +1,6 @@
 .vscode/
 .exe
+DP/*.exe
 Graph/*.exe
 Recursion/*.exe
 Linked List/*.exe
