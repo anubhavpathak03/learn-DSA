@@ -1,6 +1,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 
+void dfsHelper(vector<vector<int> > &adj, int current = 1, int parent = -1) {
+    cout << current << ' ';
+    for(auto neighbr : adj[current]) {
+        if(neighbr == parent) {
+            continue;
+        }
+        dfsHelper(adj, neighbr, current);
+    }
+}
+
 int main() {
     int n; cin >> n;
     vector<vector<int>> adj(n+1); // Adj. list (1-indexed)
@@ -22,5 +32,8 @@ int main() {
         cout << endl;
     }
 
+    cout << endl;
+
+    dfsHelper(adj);
     return 0;
 }
