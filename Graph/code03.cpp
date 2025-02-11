@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int num[100100];
+int num[100100], level[100100];
 
 void dfsHelper(vector<vector<int>> &adj, int current = 1, int parent = -1)
 {
+    level[current] = level[parent] + 1;
     num[current] = 1;
     for (auto neighbr : adj[current]) 
     {
@@ -42,9 +43,15 @@ int main() {
 
     dfsHelper(adj);
 
-
+    cout << "Subtree Size of each node -> \n";
     for(int i=1; i<=n; i++) {
         cout << i << "-->  " << num[i] << "\n"; 
+    }
+    cout << endl;
+
+    cout << "level of each node -> \n";
+    for(int i=1; i<=n; i++) {
+        cout << i << "-->  " << level[i] << "\n"; 
     }
     return 0;
 }
